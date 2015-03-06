@@ -1,0 +1,9 @@
+---
+foreman_default_domain: None
+foreman_default_environment: None
+foreman_default_hostgroup: None
+foreman_default_location: None
+foreman_default_operatingsystem: None
+foreman_default_organization: None
+foreman_default_compute_profile: None
+foreman_default_compute_resource: None
