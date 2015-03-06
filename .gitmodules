@@ -1,0 +1,3 @@
+[submodule "library"]
+	path = library
+	url = git@github.com:Nosmoht/ansible-library-foreman.git
