@@ -12,7 +12,10 @@
   when: foreman_domains is defined
 
 - include: environment.yml
-  tags: foreman_environments.yml is defined
+  when: foreman_environments is defined
+
+- include: location.yml
+  when: foreman_locations is defined
 
 - include: hostgroup.yml
   when: foreman_hostgroups is defined
