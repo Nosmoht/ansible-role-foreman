@@ -1,0 +1,11 @@
+---
+- name: Ensure Compute Profiles
+  foreman_compute_profile:
+    name: '{{ item.name }}'
+    state: '{{ item.state }}'
+    foreman_host: '{{ foreman_host }}'
+    foreman_port: '{{ foreman_port }}'
+    foreman_user: '{{ foreman_user }}'
+    foreman_pass: '{{ foreman_pass }}'
+  with_items: foreman_compute_profiles
+  tags: compute_profile

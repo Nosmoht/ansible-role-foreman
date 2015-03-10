@@ -1,0 +1,17 @@
+---
+- name: Ensure Hostgroup
+  foreman_hostgroup:
+    name: '{{ item.name }}'
+    domain: '{{ item.domain }}'
+    environment: '{{ item.environment }}'
+    medium: '{{ item.medium }}'
+    operatingsystem: '{{ item.operatingsystem }}'
+    partition_table: '{{ item.partition_table }}'
+    subnet: '{{ item.subnet }}'
+    state: '{{ item.state }}'
+    foreman_host: '{{ foreman_host }}'
+    foreman_port: '{{ foreman_port }}'
+    foreman_user: '{{ foreman_user }}'
+    foreman_pass: '{{ foreman_pass }}'
+  with_items: foreman_hostgroups
+  tags: hostgroup

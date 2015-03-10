@@ -1,91 +1,21 @@
 ---
-- name: Ensure Architecture
-  foreman_architecture:
-    name: '{{ item.name }}'
-    state: '{{ item.state }}'
-    foreman_host: '{{ foreman_host }}'
-    foreman_port: '{{ foreman_port }}'
-    foreman_user: '{{ foreman_user }}'
-    foreman_pass: '{{ foreman_pass }}'
-  with_items: foreman_architectures
+- include: architecture.yml
+  when: foreman_architectures is defined
 
-- name: Ensure Compute Profiles
-  foreman_compute_profile:
-    name: '{{ item.name }}'
-    state: '{{ item.state }}'
-    foreman_host: '{{ foreman_host }}'
-    foreman_port: '{{ foreman_port }}'
-    foreman_user: '{{ foreman_user }}'
-    foreman_pass: '{{ foreman_pass }}'
-  with_items: foreman_compute_profiles
+- include: compute_profile.yml
+  when: foreman_compute_profiles is defined
 
-- name: Ensure Compute Resource
-  foreman_compute_resource:
-    name: '{{ item.name }}'
-    url: '{{ item.url }}'
-    provider: '{{ item.provider }}'
-    user: '{{ item.user }}'
-    password: '{{ item.password }}'
-    server: '{{ item.server }}'
-    state: '{{ item.state }}'
-    foreman_host: '{{ foreman_host }}'
-    foreman_port: '{{ foreman_port }}'
-    foreman_user: '{{ foreman_user }}'
-    foreman_pass: '{{ foreman_pass }}'
-  with_items: foreman_compute_resources
+- include: compute_resource.yml
+  when: foreman_compute_resources is defined
 
-- name: Ensure Domain
-  foreman_domain:
-    name: '{{ item.name }}'
-    state: '{{ item.state }}'
-    foreman_host: '{{ foreman_host }}'
-    foreman_port: '{{ foreman_port }}'
-    foreman_user: '{{ foreman_user }}'
-    foreman_pass: '{{ foreman_pass }}'
-  with_items: foreman_domains
+- include: domain.yml
+  when: foreman_domains is defined
 
-- name: Ensure Environments
-  foreman_environment:
-    name: '{{ item.name }}'
-    state: '{{ item.state }}'
-    foreman_host: '{{ foreman_host }}'
-    foreman_port: '{{ foreman_port }}'
-    foreman_user: '{{ foreman_user }}'
-    foreman_pass: '{{ foreman_pass }}'
-  with_items: foreman_environments
+- include: environment.yml
+  tags: foreman_environments.yml is defined
 
-- name: Ensure Hostgroup
-  foreman_hostgroup:
-    name: '{{ item.name }}'
-    domain: '{{ item.domain }}'
-    environment: '{{ item.environment }}'
-    medium: '{{ item.medium }}'
-    operatingsystem: '{{ item.operatingsystem }}'
-    partition_table: '{{ item.partition_table }}'
-    subnet: '{{ item.subnet }}'
-    state: '{{ item.state }}'
-    foreman_host: '{{ foreman_host }}'
-    foreman_port: '{{ foreman_port }}'
-    foreman_user: '{{ foreman_user }}'
-    foreman_pass: '{{ foreman_pass }}'
-  with_items: foreman_hostgroups
+- include: hostgroup.yml
+  when: foreman_hostgroups is defined
 
-- name: Ensure host
-  foreman_host:
-    name: '{{ item.name }}'
-    architecture: '{{ item.architecture | default( foreman_default_architecture ) }}'
-    compute_profile: '{{ item.compute_profile | default( foreman_default_compute_profile ) }}'
-    compute_resource: '{{ item.compute_resource | default( foreman_default_compute_resource ) }}'    
-    domain: '{{ item.domain | default( foreman_default_domain ) }}'
-    environment: '{{ item.environment | default( foreman_default_environment ) }}'
-    hostgroup: '{{ item.hostgroup | default( foreman_default_hostgroup ) }}'
-    location: '{{ item.location | default( foreman_default_location ) }}'
-    medium: '{{ item.medium | default( foreman_default_medium ) }}'
-    operatingsystem: '{{ item.operatingsystem | default( foreman_default_operatingsystem ) }}'
-    organization: '{{ item.organization | default( foreman_default_organization ) }}'
-    state: '{{ item.state | default("present") }}'
-    foreman_host: '{{ foreman_host }}'
-    foreman_port: '{{ foreman_port }}'
-    foreman_user: '{{ foreman_user }}'
-    foreman_pass: '{{ foreman_pass }}'
-  with_items: foreman_hosts
+- include: host.yml
+  when: foreman_hosts is defined
