@@ -20,5 +20,8 @@
 - include: hostgroup.yml
   when: foreman_hostgroups is defined
 
+- include: subnet.yml
+  when: foreman_subnets is defined
+
 - include: host.yml
   when: foreman_hosts is defined
