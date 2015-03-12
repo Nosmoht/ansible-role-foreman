@@ -23,5 +23,8 @@
 - include: subnet.yml
   when: foreman_subnets is defined
 
+- include: smart_proxy.yml
+  when: foreman_smart_proxies is defined
+
 - include: host.yml
   when: foreman_hosts is defined
