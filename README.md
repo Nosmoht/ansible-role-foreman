@@ -1,31 +1,49 @@
-Role Name
+ansible-role-foreman
 =========
 
-A brief description of the role goes here.
+Ansible role to manage Foreman resources. This role does not install Foreman!
+
+The following resources can be managed (currently only created or deleted).
+- Architectures
+- Compute Profiles
+- Compute Resources
+- Domains
+- Environments
+- Locations
+- Hostgroups
+- Hosts
+- Media
+- Subnets
 
 Requirements
-------------
-
-Any pre-requisites that may not be covered by Ansible itself or the role should be mentioned here. For instance, if the role uses the EC2 module, it may be a good idea to mention in this section that the boto package is required.
+--------------
+Ansible is required as well as the [Ansible library] to manage Foreman resources.
 
 Role Variables
 --------------
 
-A description of the settable variables for this role should go here, including any variables that are in defaults/main.yml, vars/main.yml, and any variables that can/should be set via parameters to the role. Any variables that are read from other roles and/or the global scope (ie. hostvars, group vars, etc.) should be mentioned here as well.
+| Name | Description | Default value |
+| :------ | :------ | :----- |
+| foreman_default_domain | Default Domain of a host if not specified | None |
+| foreman_default_environment | Default Environment of a host if not specified | None |
+| foreman_default_hostgroup | Default Hostgroup of a host if not specified | None |
+| foreman_default_location | Default Location of a host if not specified | None |
+| foreman_default_operatingsystem | Default Operatingsystem of a host if not specified | None |
+| foreman_default_organization | Default Organization of a host if not specified | None |
+| foreman_default_compute_profile | Default Compute Profile of a host if not specified | None |
+| foreman_default_compute_resource | Default Compute Resource of a host if not specified | None |
 
 Dependencies
 ------------
 
-A list of other roles hosted on Galaxy should go here, plus any details in regards to parameters that may need to be set for other roles, or variables that are used from other roles.
+No other roles needed
 
-Example Playbook
+Example Playbooks
 ----------------
-
-Including an example of how to use your role (for instance, with variables passed in as parameters) is always nice for users too:
 
     - hosts: servers
       roles:
-         - { role: username.rolename, x: 42 }
+         - { role: foreman }
 
 License
 -------
@@ -34,5 +52,6 @@ BSD
 
 Author Information
 ------------------
+[Thomas Krahn]: mailto:ntbc@gmx.net
 
-An optional section for the role authors to include contact information, or a website (HTML is not allowed).
+[Ansible library]: https://github.com/Nosmoht/ansible-library-foreman
