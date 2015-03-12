@@ -3,6 +3,7 @@
   foreman_host:
     name: '{{ item.name }}'
     architecture: '{{ item.architecture | default( foreman_default_architecture ) }}'
+    build: '{{ item.build | default(true) }}'
     compute_profile: '{{ item.compute_profile | default( foreman_default_compute_profile ) }}'
     compute_resource: '{{ item.compute_resource | default( foreman_default_compute_resource ) }}'
     domain: '{{ item.domain | default( foreman_default_domain ) }}'
@@ -18,3 +19,4 @@
     foreman_user: '{{ foreman_user }}'
     foreman_pass: '{{ foreman_pass }}'
   with_items: foreman_hosts
+  tags: hosts
