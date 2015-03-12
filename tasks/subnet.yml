@@ -1,0 +1,13 @@
+---
+- name: Ensure subnet
+  foreman_subnet:
+    name: '{{ item.name }}'
+    network: '{{ item.network }}'
+    mask: '{{ item.mask }}'
+    state: '{{ item.state }}'
+    foreman_host: '{{ foreman_host }}'
+    foreman_port: '{{ foreman_port }}'
+    foreman_user: '{{ foreman_user }}'
+    foreman_pass: '{{ foreman_pass }}'
+  with_items: foreman_subnets
+  tags: subnets
