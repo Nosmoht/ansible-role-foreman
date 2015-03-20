@@ -8,6 +8,9 @@
 - include: compute_resource.yml
   when: foreman_compute_resources is defined
 
+- include: compute_attribute.yml
+  when: foreman_compute_attributes is defined
+
 - include: domain.yml
   when: foreman_domains is defined
 
