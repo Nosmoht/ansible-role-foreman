@@ -5,6 +5,7 @@ Ansible role to manage Foreman resources. This role does not install Foreman!
 
 The following resources can be managed (currently only created or deleted).
 - Architectures
+- Compute Attributes
 - Compute Profiles
 - Compute Resources
 - Domains
