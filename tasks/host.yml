@@ -11,7 +11,7 @@
     hostgroup: '{{ item.hostgroup | default( foreman_default_hostgroup ) }}'
     image: '{{ item.image | default(foreman_default_image) | default(None) }}'
     location: '{{ item.location | default( foreman_default_location ) }}'
-    medium: '{{ item.medium | default( foreman_default_medium ) | default (None) }}'
+    medium: '{{ item.medium | default( foreman_default_medium ) | default(None) }}'
     operatingsystem: '{{ item.operatingsystem | default( foreman_default_operatingsystem ) }}'
     organization: '{{ item.organization | default( foreman_default_organization ) }}'
     state: '{{ item.state | default("present") }}'
