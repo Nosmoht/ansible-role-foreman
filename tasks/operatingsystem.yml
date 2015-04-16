@@ -1,0 +1,14 @@
+---
+- name: Ensure Operatingsystem
+  foreman_operatingsystem:
+    name: '{{ item.name }}'
+    state: '{{ item.state }}'
+    description: '{{ item.description | default(None) }}'
+    major: '{{ item.major }}'
+    minor: '{{ item.minor | default(None) }}'
+    foreman_host: '{{ foreman_host }}'
+    foreman_port: '{{ foreman_port }}'
+    foreman_user: '{{ foreman_user }}'
+    foreman_pass: '{{ foreman_pass }}'
+  with_items: foreman_operatingsystems
+  tags: operatingsystem
