@@ -17,6 +17,7 @@
     operatingsystem: '{{ item.operatingsystem | default( foreman_default_operatingsystem ) }}'
     organization: '{{ item.organization | default( foreman_default_organization ) }}'
     parameters: '{{ item.parameters | default(None) }}'
+    provision_method: '{{ item.provision_method | default(None) }}'
     root_pass: '{{ item.root_pass | default(None) }}'
     state: '{{ item.state | default("present") }}'
     subnet: '{{ item.subnet | default( foreman_default_subnet ) }}'
