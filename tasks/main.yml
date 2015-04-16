@@ -1,4 +1,7 @@
 ---
+- include: organization.yml
+  when: foreman_organizations is defined
+
 - include: architecture.yml
   when: foreman_architectures is defined
 
