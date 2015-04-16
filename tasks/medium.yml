@@ -1,0 +1,12 @@
+---
+- name: Ensure Medium
+  foreman_medium:
+    name: '{{ item.name }}'
+    path: '{{ item.path | default(None) }}'
+    state: '{{ item.state }}'
+    foreman_host: '{{ foreman_host }}'
+    foreman_port: '{{ foreman_port }}'
+    foreman_user: '{{ foreman_user }}'
+    foreman_pass: '{{ foreman_pass }}'
+  with_items: foreman_media
+  tags: media
