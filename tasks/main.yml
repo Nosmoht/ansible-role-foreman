@@ -26,6 +26,9 @@
 - include: medium.yml
   when: foreman_media is defined
 
+- include: operatingsystem.yml
+  when: foreman_operatingsystems is defined
+
 - include: hostgroup.yml
   when: foreman_hostgroups is defined
 
