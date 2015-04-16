@@ -23,6 +23,9 @@
 - include: location.yml
   when: foreman_locations is defined
 
+- include: medium.yml
+  when: foreman_media is defined
+
 - include: hostgroup.yml
   when: foreman_hostgroups is defined
 
