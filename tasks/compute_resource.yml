@@ -15,3 +15,7 @@
     foreman_pass: '{{ foreman_pass }}'
   with_items: foreman_compute_resources
   tags: foreman_compute_resource
+  register: foreman_compute_resource_result
+
+- debug: var=foreman_compute_resource_result.results
+  when: foreman_debug
