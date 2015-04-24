@@ -1,4 +1,5 @@
 ---
+foreman_debug: false
 foreman_default_architecture: ''
 foreman_default_compute_profile: ''
 foreman_default_compute_resource: ''
