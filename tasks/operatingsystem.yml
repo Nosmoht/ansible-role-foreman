@@ -11,4 +11,8 @@
     foreman_user: '{{ foreman_user }}'
     foreman_pass: '{{ foreman_pass }}'
   with_items: foreman_operatingsystems
-  tags: operatingsystem
+  tags: foreman_operatingsystem
+  register: foreman_operatingsystem_result
+
+- debug: var=foreman_operatingsystem_result.results
+  when: foreman_debug
