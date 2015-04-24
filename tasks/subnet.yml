@@ -18,3 +18,7 @@
     foreman_pass: '{{ foreman_pass }}'
   with_items: foreman_subnets
   tags: foreman_subnet
+  register: foreman_subnet_result
+
+- debug: var=foreman_subnet_result.results
+  when: foreman_debug
