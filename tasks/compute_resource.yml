@@ -2,12 +2,13 @@
 - name: Ensure Compute Resource
   foreman_compute_resource:
     name: '{{ item.name }}'
-    url: '{{ item.url | default(None) }}'
+    datacenter: '{{ item.datacenter | default(None) }}'
     provider: '{{ item.provider | default(None) }}'
-    user: '{{ item.user | default(None) }}'
     password: '{{ item.password | default(None) }}'
     server: '{{ item.server | default(None) }}'
     state: '{{ item.state }}'
+    url: '{{ item.url | default(None) }}'
+    user: '{{ item.user | default(None) }}'
     foreman_host: '{{ foreman_host }}'
     foreman_port: '{{ foreman_port }}'
     foreman_user: '{{ foreman_user }}'
