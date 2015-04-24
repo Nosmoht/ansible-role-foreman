@@ -8,4 +8,8 @@
     foreman_user: '{{ foreman_user }}'
     foreman_pass: '{{ foreman_pass }}'
   with_items: foreman_compute_profiles
-  tags: compute_profile
+  tags: foreman_compute_profile
+  register: foreman_compute_profile_result
+
+- debug: var=foreman_compute_profile_result.results
+  when: foreman_debug
