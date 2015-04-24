@@ -15,3 +15,7 @@
     foreman_pass: '{{ foreman_pass }}'
   with_items: foreman_hostgroups
   tags: foreman_hostgroup
+  register: foreman_hostgroup_result
+
+- debug: var=foreman_hostgroup_result.results
+  when: foreman_debug
