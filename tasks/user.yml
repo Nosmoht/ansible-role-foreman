@@ -3,7 +3,7 @@
   foreman_user:
     name: '{{ item.name }}'
     state: '{{ item.state }}'
-    admin: '{{ item.admin | default(False) }}'
+    admin: '{{ item.admin | default("false") }}'
     auth: '{{ item.auth | default("Internal") }}'
     firstname: '{{ item.firstname | default("") }}'
     lastname: '{{ item.lastname | default("") }}'
