@@ -9,4 +9,8 @@
     foreman_user: '{{ foreman_user }}'
     foreman_pass: '{{ foreman_pass }}'
   with_items: foreman_media
-  tags: media
+  tags: foreman_medium
+  register: foreman_medium_result
+
+- debug: var=foreman_medium_result.results
+  when: foreman_debug
