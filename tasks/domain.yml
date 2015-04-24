@@ -8,4 +8,8 @@
     foreman_user: '{{ foreman_user }}'
     foreman_pass: '{{ foreman_pass }}'
   with_items: foreman_domains
-  tags: domain
+  tags: foreman_domain
+  register: foreman_domain_result
+
+- debug: var=foreman_domain_result.results
+  when: foreman_debug
