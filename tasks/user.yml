@@ -14,5 +14,5 @@
     foreman_port: '{{ foreman_port }}'
     foreman_user: '{{ foreman_user }}'
     foreman_pass: '{{ foreman_pass }}'
-  with_items: foreman_user
+  with_items: foreman_users
   tags: foreman_user
