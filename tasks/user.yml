@@ -1,0 +1,18 @@
+---
+- name: Ensure User
+  foreman_user:
+    name: '{{ item.name }}'
+    state: '{{ item.state }}'
+    admin: '{{ item.admin | default(False) }}'
+    auth: '{{ item.auth | default("Internal") }}'
+    firstname: '{{ item.firstname | default("") }}'
+    lastname: '{{ item.lastname | default("") }}'
+    mail: '{{ item.mail | default("") }}'
+    password: '{{ item.password | default("") }}'
+    roles: '{{ item.roles | default([]) }}'
+    foreman_host: '{{ foreman_host }}'
+    foreman_port: '{{ foreman_port }}'
+    foreman_user: '{{ foreman_user }}'
+    foreman_pass: '{{ foreman_pass }}'
+  with_items: foreman_user
+  tags: foreman_user
