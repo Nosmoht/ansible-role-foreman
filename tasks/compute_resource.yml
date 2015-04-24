@@ -2,15 +2,15 @@
 - name: Ensure Compute Resource
   foreman_compute_resource:
     name: '{{ item.name }}'
-    url: '{{ item.url }}'
-    provider: '{{ item.provider }}'
-    user: '{{ item.user }}'
-    password: '{{ item.password }}'
-    server: '{{ item.server }}'
+    url: '{{ item.url | default(None) }}'
+    provider: '{{ item.provider | default(None) }}'
+    user: '{{ item.user | default(None) }}'
+    password: '{{ item.password | default(None) }}'
+    server: '{{ item.server | default(None) }}'
     state: '{{ item.state }}'
     foreman_host: '{{ foreman_host }}'
     foreman_port: '{{ foreman_port }}'
     foreman_user: '{{ foreman_user }}'
     foreman_pass: '{{ foreman_pass }}'
   with_items: foreman_compute_resources
-  tags: compute_resource
+  tags: foreman_compute_resource
