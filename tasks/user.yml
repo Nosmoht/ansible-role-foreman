@@ -16,3 +16,7 @@
     foreman_pass: '{{ foreman_pass }}'
   with_items: foreman_users
   tags: foreman_user
+  register: foreman_user_result
+
+- debug: var=foreman_user_result.results
+  when: foreman_debug
