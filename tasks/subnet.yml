@@ -3,6 +3,13 @@
   foreman_subnet:
     name: '{{ item.name }}'
     network: '{{ item.network }}'
+    gateway: '{{ item.gateway | default(None) }}'
+    dns_primary: '{{ item.dns_primary | default(None) }}'
+    dns_secondary: '{{ item.dns_secondary | default(None) }}'
+    ipam: '{{ item.ipam | default(None) }}'
+    ip_from: '{{ item.ip_from | default(None) }}'
+    ip_to: '{{ item.ip_to | default(None) }}'
+    vlanid: '{{ item.vlan_id | default(None) }}'
     mask: '{{ item.mask }}'
     state: '{{ item.state }}'
     foreman_host: '{{ foreman_host }}'
@@ -10,4 +17,4 @@
     foreman_user: '{{ foreman_user }}'
     foreman_pass: '{{ foreman_pass }}'
   with_items: foreman_subnets
-  tags: subnets
+  tags: foreman_subnet
