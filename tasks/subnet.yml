@@ -9,7 +9,7 @@
     ipam: '{{ item.ipam | default(None) }}'
     ip_from: '{{ item.ip_from | default(None) }}'
     ip_to: '{{ item.ip_to | default(None) }}'
-    vlanid: '{{ item.vlan_id | default(None) }}'
+    vlanid: '{{ item.vlanid | default(None) }}'
     mask: '{{ item.mask }}'
     state: '{{ item.state }}'
     foreman_host: '{{ foreman_host }}'
