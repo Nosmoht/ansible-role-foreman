@@ -38,5 +38,11 @@
 - include: smart_proxy.yml
   when: foreman_smart_proxies is defined
 
+- include: role.yml
+  when: foreman_roles is defined
+
+- include: user.yml
+  when: foreman_users is defined
+
 - include: host.yml
   when: foreman_hosts is defined
