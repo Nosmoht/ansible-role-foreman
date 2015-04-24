@@ -9,4 +9,8 @@
     foreman_user: '{{ foreman_user }}'
     foreman_pass: '{{ foreman_pass }}'
   with_items: foreman_compute_attributes
-  tags: compute_attribute
+  tags: foreman_compute_attribute
+  register: foreman_compute_attribute_result
+
+- debug: var=foreman_compute_attribute_result.results
+  when: foreman_debug
