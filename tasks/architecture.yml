@@ -8,4 +8,8 @@
     foreman_user: '{{ foreman_user }}'
     foreman_pass: '{{ foreman_pass }}'
   with_items: foreman_architectures
-  tags: architecture
+  tags: foreman_architecture
+  register: foreman_architecture_result
+
+- debug: var=foreman_architecture_result.results
+  when: foreman_debug
