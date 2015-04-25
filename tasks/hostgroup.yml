@@ -2,19 +2,20 @@
 - name: Ensure Hostgroup
   foreman_hostgroup:
     name: '{{ item.name }}'
-    domain: '{{ item.domain | default("") }}'
-    environment: '{{ item.environment | default("") }}'
-    medium: '{{ item.medium | default("") }}'
-    operatingsystem: '{{ item.operatingsystem | default("") }}'
-    partition_table: '{{ item.partition_table | default("") }}'
-    subnet: '{{ item.subnet | default("") }}'
-    state: '{{ item.state }}'
+    architecture: '{{ item.architecture | default(None) }}'
+    compute_profile: '{{ item.compute_profile | default(None) }}'
+    domain: '{{ item.domain | default(None) }}'
+    environment: '{{ item.environment | default(None) }}'
+    medium: '{{ item.medium | default(None) }}'
+    operatingsystem: '{{ item.operatingsystem | default(None) }}'
+    partition_table: '{{ item.partition_table | default(None) }}'
+    subnet: '{{ item.subnet | default(None) }}'
+    state: '{{ item.state | default(None) }}'
     foreman_host: '{{ foreman_host }}'
     foreman_port: '{{ foreman_port }}'
     foreman_user: '{{ foreman_user }}'
     foreman_pass: '{{ foreman_pass }}'
   with_items: foreman_hostgroups
-  tags: foreman_hostgroup
   register: foreman_hostgroup_result
 
 - debug: var=foreman_hostgroup_result.results
