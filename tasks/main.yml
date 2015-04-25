@@ -1,48 +1,64 @@
 ---
 - include: organization.yml
   when: foreman_organizations is defined
+  tags: foreman_organization
 
 - include: architecture.yml
   when: foreman_architectures is defined
+  tags: foreman_architecture
 
 - include: compute_profile.yml
   when: foreman_compute_profiles is defined
+  tags: foreman_compute_profile
 
 - include: compute_resource.yml
   when: foreman_compute_resources is defined
+  tags: foreman_compute_resource
 
 - include: compute_attribute.yml
   when: foreman_compute_attributes is defined
+  tags: foreman_compute_attribute
 
 - include: domain.yml
   when: foreman_domains is defined
+  tags: foreman_domain
 
 - include: environment.yml
   when: foreman_environments is defined
+  tags: foreman_environment
 
 - include: location.yml
   when: foreman_locations is defined
+  tags: foreman_location
 
 - include: medium.yml
   when: foreman_media is defined
+  tags: foreman_medium
 
 - include: operatingsystem.yml
   when: foreman_operatingsystems is defined
-
-- include: hostgroup.yml
-  when: foreman_hostgroups is defined
+  tags: foreman_operatingsystem
 
 - include: subnet.yml
   when: foreman_subnets is defined
+  tags: foreman_subnet
+
+- include: hostgroup.yml
+  when: foreman_hostgroups is defined
+  tags: foreman_hostgroup
 
 - include: smart_proxy.yml
   when: foreman_smart_proxies is defined
+  tags: foreman_smart_proxy
 
 - include: role.yml
   when: foreman_roles is defined
+  tags: foreman_role
 
 - include: user.yml
   when: foreman_users is defined
+  tags: foreman_user
 
 - include: host.yml
   when: foreman_hosts is defined
+  tags: foreman_host
