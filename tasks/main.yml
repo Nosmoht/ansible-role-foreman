@@ -19,6 +19,10 @@
   when: foreman_compute_attributes is defined
   tags: foreman_compute_attribute
 
+- include: config_template.yml
+  when: foreman_config_templates is defined
+  tags: foreman_config_template
+
 - include: domain.yml
   when: foreman_domains is defined
   tags: foreman_domain
