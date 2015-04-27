@@ -9,4 +9,7 @@
     foreman_user: '{{ foreman_user }}'
     foreman_pass: '{{ foreman_pass }}'
   with_items: foreman_smart_proxies
-  tags: smart_proxy
+  register: foreman_smart_proxy_result
+
+- debug: var=foreman_smart_proxy_result.results
+  when: foreman_debug

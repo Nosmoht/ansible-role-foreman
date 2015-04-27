@@ -1,0 +1,19 @@
+---
+- name: Ensure Config Template
+  foreman_config_template:
+    name: '{{ item.name }}'
+    locked: '{{ item.locked | default("false") }}'
+    operatingsystems: '{{ item.operatingsystems | default([]) }}'
+    template: '{{ item.template | default(None) }}'
+    template_file: '{{ item.template_file | default(None) }}'
+    snippet: '{{ item.snippet | default("false") }}'
+    state: '{{ item.state }}'
+    foreman_host: '{{ foreman_host }}'
+    foreman_port: '{{ foreman_port }}'
+    foreman_user: '{{ foreman_user }}'
+    foreman_pass: '{{ foreman_pass }}'
+  with_items: foreman_config_templates
+  register: foreman_config_template_result
+
+- debug: var=foreman_config_template_result.results
+  when: foreman_debug

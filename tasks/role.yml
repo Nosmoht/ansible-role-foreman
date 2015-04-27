@@ -9,3 +9,7 @@
     foreman_pass: '{{ foreman_pass }}'
   with_items: foreman_roles
   tags: foreman_role
+  register: foreman_role_result
+
+- debug: var=foreman_role_result.results
+  when: foreman_debug

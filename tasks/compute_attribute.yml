@@ -3,7 +3,7 @@
   foreman_compute_attribute:
     compute_resource: '{{ item.compute_resource }}'
     compute_profile: '{{ item.compute_profile }}'
-    vm_attributes: '{{ item.vm_attributes }}'
+    vm_attributes: '{{ item.vm_attributes | default(None) }}'
     foreman_host: '{{ foreman_host }}'
     foreman_port: '{{ foreman_port }}'
     foreman_user: '{{ foreman_user }}'
