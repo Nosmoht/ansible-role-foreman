@@ -3,9 +3,12 @@
   foreman_operatingsystem:
     name: '{{ item.name }}'
     state: '{{ item.state }}'
+    architectures: '{{ item.architectures | default([]) }}'
     description: '{{ item.description | default(None) }}'
     major: '{{ item.major }}'
+    media: '{{ item.media | default([]) }}'
     minor: '{{ item.minor | default(None) }}'
+    partition_tables: '{{ item.partition_tables | default([]) }}'
     release_name: '{{ item.release_name | default(None) }}'
     foreman_host: '{{ foreman_host }}'
     foreman_port: '{{ foreman_port }}'
