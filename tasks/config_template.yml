@@ -3,6 +3,7 @@
   foreman_config_template:
     name: '{{ item.name }}'
     locked: '{{ item.locked | default("false") }}'
+    operatingsystems: '{{ item.operatingsystems | default([]) }}'
     template: '{{ item.template | default(None) }}'
     template_file: '{{ item.template_file | default(None) }}'
     snippet: '{{ item.snippet | default("false") }}'
