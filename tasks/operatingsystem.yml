@@ -9,7 +9,6 @@
     major: '{{ item.major }}'
     media: '{{ item.media | default() }}'
     minor: '{{ item.minor | default() }}'
-    os_default_templates: '{{ item.os_default_templates | default() }}'
     partition_tables: '{{ item.partition_tables | default() }}'
     release_name: '{{ item.release_name | default() }}'
     foreman_host: '{{ foreman_host }}'
