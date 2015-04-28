@@ -43,6 +43,10 @@
   when: foreman_config_templates is defined
   tags: foreman_config_template
 
+- include: os_default_template.yml
+  when: foreman_os_default_templates is defined
+  tags: foreman_os_default_template
+
 - include: subnet.yml
   when: foreman_subnets is defined
   tags: foreman_subnet
