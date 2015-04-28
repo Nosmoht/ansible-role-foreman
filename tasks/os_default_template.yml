@@ -1,0 +1,17 @@
+- name: Ensure Operatingsystem default template
+  foreman_os_default_template:
+    operatingsystem: '{{ item.operatingsystem }}'
+    config_template: '{{ item.config_template }}'
+    template_kind: '{{ item.template_kind }}'
+    state: '{{ item.state }}'
+    foreman_host: '{{ foreman_host }}'
+    foreman_port: '{{ foreman_port }}'
+    foreman_user: '{{ foreman_user }}'
+    foreman_pass: '{{ foreman_pass }}'
+  with_items: foreman_os_default_templates
+  register: foreman_os_default_templates_result
+  tags: foreman_os_default_template
+
+- debug: var=foreman_os_default_templates_result.results
+  tags: foreman_os_default_template
+  when: foreman_debug
