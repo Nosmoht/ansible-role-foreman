@@ -26,4 +26,7 @@
     foreman_user: '{{ foreman_user }}'
     foreman_pass: '{{ foreman_pass }}'
   with_items: foreman_hosts
-  tags: hosts
+  register: foreman_host_result
+
+- debug: var=foreman_host_result.results
+  when: foreman_debug
