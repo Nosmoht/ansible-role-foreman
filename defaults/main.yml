@@ -1,13 +1,13 @@
 ---
 foreman_debug: false
-foreman_default_architecture: ''
-foreman_default_compute_profile: ''
-foreman_default_compute_resource: ''
-foreman_default_domain: ''
-foreman_default_environment: ''
-foreman_default_hostgroup: ''
-foreman_default_location: ''
-foreman_default_medium: ''
-foreman_default_operatingsystem: ''
-foreman_default_organization: ''
-foreman_default_subnet: ''
+foreman_default_architecture: null
+foreman_default_compute_profile: null
+foreman_default_compute_resource: null
+foreman_default_domain: null
+foreman_default_environment: null
+foreman_default_hostgroup: null
+foreman_default_location: null
+foreman_default_medium: null
+foreman_default_operatingsystem: null
+foreman_default_organization: null
+foreman_default_subnet: null
