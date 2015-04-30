@@ -1,5 +1,9 @@
 ---
 foreman_debug: false
+foreman_host: 127.0.0.1
+foreman_port: 443
+foreman_user: admin
+foreman_pass: topsecret
 foreman_default_architecture: null
 foreman_default_compute_profile: null
 foreman_default_compute_resource: null
