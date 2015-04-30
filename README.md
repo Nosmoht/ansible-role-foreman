@@ -30,6 +30,10 @@ Ansible is required as well as the [Ansible library] to manage Foreman resources
 
 | Name | Description | Default value |
 | :------ | :------ | :----- |
+| foreman_host | Hostname or IP of Foreman host | 127.0.0.1 |
+| foreman_port | Port used to connect to Foreman | 443 |
+| foreman_user | User to authenticate | admin |
+| foreman_pass | Password | topsecret |
 | foreman_debug | Boolean to define if results of each task should be printed | False |
 | foreman_default_domain | Default Domain of a host if not specified | None |
 | foreman_default_environment | Default Environment of a host if not specified | None |
@@ -54,8 +58,9 @@ No other roles needed
 
 BSD
 
-Author Information
-------------------
+# Author Information
+[Thomas Krahn]
+
 [Thomas Krahn]: mailto:ntbc@gmx.net
 
 [Ansible library]: https://github.com/Nosmoht/ansible-library-foreman
