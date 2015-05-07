@@ -19,7 +19,7 @@
     parameters: '{{ item.parameters | default(foreman_default_parameters) | default(omit) }}'
     provision_method: '{{ item.provision_method | default(foreman_default_provision_method) | default(omit) }}'
     root_pass: '{{ item.root_pass | default(foreman_default_root_pass) | default(omit) }}'
-    state: '{{ item.state | default("present") }}'
+    state: '{{ item.state | default(foreman_default_state) | default(omit) }}'
     subnet: '{{ item.subnet | default(foreman_default_subnet) | default(omit) }}'
     foreman_host: '{{ foreman_host }}'
     foreman_port: '{{ foreman_port }}'
