@@ -2,11 +2,11 @@
 - name: Ensure Config Template
   foreman_config_template:
     name: '{{ item.name }}'
-    locked: '{{ item.locked | default("false") }}'
-    operatingsystems: '{{ item.operatingsystems | default([]) }}'
-    template: '{{ item.template | default(None) }}'
-    template_file: '{{ item.template_file | default(None) }}'
-    snippet: '{{ item.snippet | default("false") }}'
+    locked: '{{ item.locked | default(omit) }}'
+    operatingsystems: '{{ item.operatingsystems | default(omit) }}'
+    template: '{{ item.template | default(omit) }}'
+    template_file: '{{ item.template_file | default(omit) }}'
+    snippet: '{{ item.snippet | default(omit) }}'
     state: '{{ item.state }}'
     foreman_host: '{{ foreman_host }}'
     foreman_port: '{{ foreman_port }}'
