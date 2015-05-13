@@ -8,4 +8,4 @@
     foreman_user: '{{ foreman_user }}'
     foreman_pass: '{{ foreman_pass }}'
   with_items: foreman_locations
-  tags: location
+  tags: foreman_location
