@@ -1,0 +1,15 @@
+---
+- name: Ensure partition table
+  foreman_ptable:
+    name: '{{ item.name }}'
+    state: '{{ item.state | default(omit) }}'
+    layout: '{{ item.layout | default(omit) }}'
+    foreman_host: '{{ foreman_host }}'
+    foreman_port: '{{ foreman_port }}'
+    foreman_user: '{{ foreman_user }}'
+    foreman_pass: '{{ foreman_pass }}'
+  with_items: foreman_ptables
+  register: foreman_ptable_result
+
+- debug: var=foreman_ptable_result
+  when: foreman_debug
