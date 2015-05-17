@@ -35,6 +35,10 @@
   when: foreman_media is defined
   tags: foreman_medium
 
+- include: ptable.yml
+  when: foreman_ptables is defined
+  tags: foreman_ptable
+
 - include: operatingsystem.yml
   when: foreman_operatingsystems is defined
   tags: foreman_operatingsystem
