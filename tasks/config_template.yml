@@ -6,6 +6,7 @@
     operatingsystems: '{{ item.operatingsystems | default(omit) }}'
     template: '{{ item.template | default(omit) }}'
     template_file: '{{ item.template_file | default(omit) }}'
+    template_kind_name: '{{ item.template_kind_name | default(omit) }}'
     snippet: '{{ item.snippet | default(omit) }}'
     state: '{{ item.state }}'
     foreman_host: '{{ foreman_host }}'
