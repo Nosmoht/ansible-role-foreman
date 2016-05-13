@@ -4,6 +4,7 @@
     name: '{{ item.name }}'
     state: '{{ item.state | default(omit) }}'
     layout: '{{ item.layout | default(omit) }}'
+    os_family: '{{ item.os_family | default(omit) }}'
     foreman_host: '{{ foreman_host }}'
     foreman_port: '{{ foreman_port }}'
     foreman_user: '{{ foreman_user }}'
