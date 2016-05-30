@@ -2,6 +2,7 @@
 - name: Ensure Domain
   foreman_domain:
     name: '{{ item.name }}'
+    dns_proxy: '{{ item.dns_proxy }}'
     state: '{{ item.state }}'
     foreman_host: '{{ foreman_host }}'
     foreman_port: '{{ foreman_port }}'
